@@ -19,8 +19,7 @@ const plugins = [
   new webpack.optimize.CommonsChunkPlugin({
     name: 'vendor',
     minChunks: Infinity,
-    filename: 'vendor.js',
-    publicPath: './'
+    filename: 'vendor.js'
   }),
   new webpack.DefinePlugin({
     'process.env': {
