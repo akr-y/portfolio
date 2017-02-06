@@ -19,7 +19,8 @@ const plugins = [
   new webpack.optimize.CommonsChunkPlugin({
     name: 'vendor',
     minChunks: Infinity,
-    filename: 'vendor-[hash].js'
+    filename: 'vendor.js',
+    publicPath: './'
   }),
   new webpack.DefinePlugin({
     'process.env': {
@@ -96,7 +97,7 @@ if (isProduction) {
         comments: false
       }
     }),
-    new ExtractTextPlugin('style-[hash].css')
+    new ExtractTextPlugin('style.css')
   )
 
   rules.push({
@@ -143,7 +144,7 @@ module.exports = {
   output: {
     path: buildPath,
     publicPath: './',
-    filename: 'app-[hash].js'
+    filename: 'app.js'
   },
   module: {
     rules
