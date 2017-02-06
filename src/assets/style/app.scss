@@ -1,9 +1,8 @@
 
+/*Font*/
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
+* {font-family: 'Lato', sans-serif;}
 
-* {
-  font-family: 'Lato', sans-serif;
-}
-
+/*Styles*/
 html,body,#root {min-height: 100%;}
 body {background: #E5E5EA;}
