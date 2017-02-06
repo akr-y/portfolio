@@ -8,7 +8,6 @@
 .board {
   background: #f5f5f5;
   height: 50px;
-  -webkit-transform: translateZ(50deg);
   transform: rotateX(30deg);
   width: 100%;
   box-shadow: 0 8px 0 -4px #a9aab8, 0 20px 40px -10px rgba(0,0,0,.2);
@@ -19,16 +18,28 @@
 .descriptionWrapper {
   background: #fff;
   display: inline-block;
-  padding: 20px 30px;
+  padding: 40px 40px 20px;
   text-align: left;
-  width: 400px;
+  width: 320px;
   vertical-align: middle;
 }
+.title {
+  color: #235;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  letter-spacing: 3px;
+}
 .description {
-
+  margin-bottom: 10px;
 }
 .link {
-
+  font-weight: bold;
+  margin-top: 10px;
+  a {
+    color: #07f;
+    text-decoration: none;
+  }
 }
 .image {
 
@@ -40,9 +51,6 @@
 
 }
 .term {
-
-}
-.title {
 
 }
 .thumbnailWrapper {

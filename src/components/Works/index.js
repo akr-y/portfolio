@@ -27,7 +27,7 @@ export default class Works extends Component {
             title: work.fields.title,
             thumbnail: work.fields.thumbnail.fields.file.url
           }
-          return <Work {...data} />
+          return <Work key={work.sys.id} {...data} />
         }) : null}
       </div>
     )

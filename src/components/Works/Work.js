@@ -16,7 +16,6 @@ export default class Work extends Component {
     thumbnail: PropTypes.string
   }
   render() {
-
     return (
       <div className={styles.wrapper}>
         <div className={styles.workWrapper}>
@@ -29,6 +28,9 @@ export default class Work extends Component {
             <div className={styles.term}>{this.props.term}</div>
             <div className={styles.role}>{this.props.role}</div>
             <div className={styles.tech}>{this.props.tech}</div>
+            <div className={styles.link}>
+              <a href={this.props.link} target='_blank'>View site</a>
+            </div>
           </div>
         </div>
         <div className={styles.boardWrapper}>
