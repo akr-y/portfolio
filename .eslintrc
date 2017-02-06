@@ -1,0 +1,54 @@
+extends:
+  eslint-config-airbnb
+
+parser:
+  babel-eslint
+
+settings:
+  ecmascript: 6
+
+ecmaFeatures:
+  jsx: true
+  modules: true
+  destructuring: true
+  classes: true
+  forOf: true
+  blockBindings: true
+  arrowFunctions: true
+
+env:
+  browser: true
+
+rules:
+  arrow-body-style: 0
+  arrow-parens: 0
+  camelcase: 0
+  class-methods-use-this: 0
+  comma-dangle: [2, {
+    "arrays": "never",
+    "objects": "never",
+    "imports": "never",
+    "exports": "never",
+    "functions": "never",
+  }]
+  func-names: 0
+  indent: 2
+  max-len: [2, 550, 2]
+  new-cap: 0
+  no-plusplus: 0
+  no-return-assign: 0
+  object-curly-spacing: 0
+  quote-props: 0
+  semi: [2, "never"]
+  template-curly-spacing: [1]
+  react/jsx-no-bind: 0
+  jsx-quotes: [2, "prefer-single"]
+  react/forbid-prop-types: 0
+  react/jsx-curly-spacing: [1]
+  react/jsx-filename-extension: 0
+  react/jsx-boolean-value: 0
+  react/prefer-stateless-function: 0
+  import/extensions: 0
+  import/no-extraneous-dependencies: 0
+  import/no-unresolved: 0
+  import/prefer-default-export: 0

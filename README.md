@@ -1,37 +1,153 @@
-## Welcome to GitHub Pages
+# React and Redux, Webpack 2 boilerplate
 
-You can use the [editor on GitHub](https://github.com/akira3500/portfolio/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+## Table of contents
+* [What is this?](#user-content-what-is-this)
+* [Features](#user-content-features)
+* [Setup](#user-content-setup)
+* [Running in dev mode](#user-content-running-in-dev-mode)
+* [Build (production)](#user-content-build-production)
+* [Running in preview production mode](#user-content-running-in-preview-production-mode)
+* [Linting](#user-content-linting)
+* [Git hooks](#user-content-git-hooks)
+* [Changelog](#user-content-changelog)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+## What is this?
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Boilerplate I extracted from a small real world project.
 
-```markdown
-Syntax highlighted code block
+Webpack 2 is still in beta, but at this point is the only version
+that I managed to run everything I wanted, including hot module replacement.
 
-# Header 1
-## Header 2
-### Header 3
+This boilerplate includes complete, minimal react app.
+By complete I mean it has examples for:
 
-- Bulleted
-- List
+- components (both container/views and regular ones)
+- routes
+- reducers (redux)
+- actions (both sync and async),
+- SASS (with autoprefixer)<sup>1</sup>
+- dummy API
+- using assets (in CSS and components)
+- imports relative to the app root
 
-1. Numbered
-2. List
+![Example dashboard](http://i.imgur.com/z4Cpmdb.png)
 
-**Bold** and _Italic_ and `Code` text
+<sup>1</sup> Using source maps breaks urls in the CSS loader - https://github.com/webpack/css-loader/issues/232. Try [this](https://github.com/webpack/css-loader/issues/232#issuecomment-240449998) to fix it (but it breaks testing from local network).
 
-[Link](url) and ![Image](src)
+## Features
+
+- [x] React
+- [x] React router
+- [x] Redux
+- [x] Redux Thunk
+- [x] Redux Dev Tools
+- [x] Immutable reducer data
+- [x] Webpack 2 (development and production config)
+- [x] Hot Module Replacement
+- [x] Babel - static props, decorators
+- [x] SASS with autoprefixing
+- [x] Webpack dashboard
+- [x] Linting
+- [x] Included `es6-promise` and `isomorphic-fetch`
+- [x] Preview production build
+- [x] File imports relative to the app root
+- [x] Git hooks - lint before push
+
+Universal may be added at some point.
+
+- [ ] Universal rendering
+- [ ] Server async data
+
+Other nice to have features
+
+- [ ] Generating icon font from SVGs
+- [ ] Modernizr
+- [ ] Google analytics
+- [ ] Error reporting (not sure if this should be the part of the boilerplate)
+
+## Setup
+
+Tested with node 6.x and 7.x
+
+```
+$ npm install
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## Running in dev mode
 
-### Jekyll Themes
+```
+$ npm start
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/akira3500/portfolio/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Visit `http://localhost:3000/` from your browser of choice.
+Server is visible from the local network as well.
 
-### Support or Contact
+![Running in the iTerm2](http://i.imgur.com/IxamMBh.png)
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+It is using [webpack dashboard](https://github.com/FormidableLabs/webpack-dashboard), so please note the following:
+
+**OS X Terminal.app users:** Make sure that **View → Allow Mouse Reporting** is enabled, otherwise scrolling through logs and modules won't work. If your version of Terminal.app doesn't have this feature, you may want to check out an alternative such as [iTerm2](https://www.iterm2.com/).
+
+## Build (production)
+
+Build will be placed in the `build` folder.
+
+```
+$ npm run build
+```
+
+If your app is not running on the server root you should change `publicPath` at two places.
+
+In `webpack.config.js` (ATM line 147):
+
+```
+output: {
+  path: buildPath,
+  publicPath: '/your-app/',
+  filename: 'app-[hash].js',
+},
+```
+
+and in `/src/routes` (ATM line 9):
+
+```
+const publicPath = '/your-app/';
+```
+
+Don't forget the trailing slash (`/`). In development visit `http://localhost:3000/your-app/`.
+
+## Running in preview production mode
+
+This command will start webpack dev server, but with `NODE_ENV` set to `production`.
+Everything will be minified and served.
+Hot reload will not work, so you need to refresh the page manually after changing the code.
+
+```
+npm run preview
+```
+
+## Linting
+
+For linting I'm using [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb),
+but some options are overridden to my personal preferences.
+
+```
+$ npm run lint
+```
+
+## Git hooks
+
+Linting pre-push hook is not enabled by default.
+It will prevent the push if lint task fails,
+but you need to add it manually by running:
+
+```
+npm run hook-add
+```
+
+To remove it, run this task:
+
+```
+npm run hook-remove
+```
