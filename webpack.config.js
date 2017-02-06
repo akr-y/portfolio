@@ -142,7 +142,7 @@ module.exports = {
   },
   output: {
     path: buildPath,
-    publicPath: '/',
+    publicPath: './',
     filename: 'app-[hash].js'
   },
   module: {
@@ -157,7 +157,7 @@ module.exports = {
   },
   plugins,
   devServer: {
-    contentBase: isProduction ? './build' : './src',
+    contentBase: isProduction ? './docs' : './src',
     historyApiFallback: true,
     port: 3000,
     compress: isProduction,
