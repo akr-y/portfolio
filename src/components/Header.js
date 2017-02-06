@@ -10,8 +10,8 @@ export default class Header extends Component {
     return (
       <div>
         <header className={styles.header}>
-          <div className={styles.wrapper}>
-            Akira Yamamoto
+          <div className={styles.style}>
+            AKIRA YAMAMOTO
           </div>
         </header>
       </div>

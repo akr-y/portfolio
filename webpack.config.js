@@ -142,7 +142,7 @@ module.exports = {
   },
   output: {
     path: buildPath,
-    publicPath: './',
+    publicPath: isProduction ? './' : '/',
     filename: 'app.js'
   },
   module: {

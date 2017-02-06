@@ -1,8 +1,17 @@
-
 /*Font*/
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
-* {font-family: 'Lato', sans-serif;}
-
+@import url( 'https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
+* {
+  font-family: 'Lato', sans-serif;
+}
 /*Styles*/
-html,body,#root {min-height: 100%;}
-body {background: #E5E5EA;}
+#root,
+body,
+html {
+  min-height: 100%;
+}
+body {
+  background-color: #E5E5EA;
+  background-image: -webkit-repeating-radial-gradient(center center, rgba(0,0,0,.1), rgba(0,0,0,.1) 4px, transparent 4px, transparent 100%);
+  background-image: repeating-radial-gradient(center center, rgba(0,0,0,.1), rgba(0,0,0,.1) 4px, transparent 4px, transparent 100%);
+  background-size: 180px 180px;
+}

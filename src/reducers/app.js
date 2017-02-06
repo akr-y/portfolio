@@ -1,42 +1,42 @@
 // import config from 'config'
 import _ from 'lodash'
 
-const FETCH_FEATURED_MERCHANTS = 'CMS/FETCH_FEATURED_MERCHANTS'
-const FETCH_FEATURED_MERCHANTS_SUCCESS = 'CMS/FETCH_FEATURED_MERCHANTS_SUCCESS'
-const FETCH_FEATURED_MERCHANTS_FAIL = 'CMS/FETCH_FEATURED_MERCHANTS_FAIL'
+const FETCH_WORKS = 'CMS/FETCH_WORKS'
+const FETCH_WORKS_SUCCESS = 'CMS/FETCH_WORKS_SUCCESS'
+const FETCH_WORKS_FAIL = 'CMS/FETCH_WORKS_FAIL'
 
 const initialState = {
   fetching: false,
-  fetchFeaturedMerchantsSuccess: null,
-  fetchFeaturedMerchantsError: null
+  fetchWorksSuccess: null,
+  fetchWorksError: null
 }
 
 const actionsMap = {
-  [FETCH_FEATURED_MERCHANTS]: (state) => {
+  [FETCH_WORKS]: (state) => {
     return {
       ...state,
       fetching: true,
-      fetchFeaturedMerchantsSuccess: null,
-      fetchFeaturedMerchantsError: null
+      fetchWorksSuccess: null,
+      fetchWorksError: null
     }
   },
-  [FETCH_FEATURED_MERCHANTS_SUCCESS]: (state, action) => {
+  [FETCH_WORKS_SUCCESS]: (state, action) => {
     return {
       ...state,
       fetching: false,
-      fetchFeaturedMerchantsSuccess: action.data
+      fetchWorksSuccess: action.data
     }
   },
-  [FETCH_FEATURED_MERCHANTS_FAIL]: (state, action) => {
+  [FETCH_WORKS_FAIL]: (state, action) => {
     return {
       ...state,
       fetching: false,
-      fetchFeaturedMerchantsError: action.error
+      fetchWorksError: action.error
     }
   }
 }
 
-export const fetchFeaturedMerchants = () => ({type: FETCH_FEATURED_MERCHANTS})
+export const fetchWorks = () => ({type: FETCH_WORKS})
 
 export default function reducer(state = initialState, action = {}) {
   const fn = actionsMap[action.type]
