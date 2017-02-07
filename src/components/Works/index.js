@@ -1,8 +1,8 @@
 import React, {Component, PropTypes} from 'react'
 import {connect} from 'react-redux'
+import _ from 'lodash'
 import styles from './Works.scss'
 import Work from './Work'
-import _ from 'lodash'
 
 @connect(state => ({...state}))
 
@@ -20,7 +20,7 @@ export default class Works extends Component {
           const data = {
             description: work.fields.description,
             link: work.fields.link,
-            image: work.fields.image.fields.file.url,
+            workId: work.sys.id,
             role: work.fields.role,
             tech: work.fields.tech,
             term: work.fields.term,

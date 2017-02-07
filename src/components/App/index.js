@@ -12,7 +12,8 @@ dispatch => bindActionCreators({fetchWorks}, dispatch))
 
 export default class App extends Component {
   static propTypes = {
-    fetchWorks: PropTypes.func
+    fetchWorks: PropTypes.func,
+    children: PropTypes.object
   }
 
   componentWillMount() {
@@ -25,6 +26,7 @@ export default class App extends Component {
         <Header />
         <Works />
         <Footer />
+        {this.props.children}
       </div>
     )
   }
