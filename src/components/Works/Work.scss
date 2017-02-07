@@ -13,15 +13,39 @@
   box-shadow: 0 8px 0 -4px #a9aab8, 0 20px 40px -10px rgba(0,0,0,.2);
 }
 .workWrapper {
+  height: 310px;
+  position: relative;
   text-align: center;
+  z-index: 100;
 }
 .descriptionWrapper {
   background: #fff;
   display: inline-block;
   padding: 40px 40px 20px;
+  position: relative;
   text-align: left;
   width: 320px;
   vertical-align: middle;
+
+  $dotSize: 7px;
+  &:before,
+  &:after {
+    background: #013;
+    border-radius: $dotSize/2;
+    content: ' ';
+    display: block;
+    height: $dotSize;
+    opacity: .5;
+    position: absolute;
+    top: 20px;
+    width: $dotSize;
+  }
+  &:before {
+    left: 20px
+  }
+  &:after {
+    right: 20px;
+  }
 }
 .title {
   color: #235;
