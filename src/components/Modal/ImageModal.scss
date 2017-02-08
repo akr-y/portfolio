@@ -7,11 +7,36 @@
   z-index: 10000;
 }
 
+.showModal {
+  .filter {
+    opacity: 1;
+  }
+  .ImageWrapper {
+    transform: scale(1);
+  }
+}
+
 .filter {
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+  opacity: 0;
+  transition: .3s;
+  transition-delay: 1s;
   background: rgba(0,0,0,.5);
+}
+
+.ImageWrapper {
+  margin: 80px auto;
+  position:relative;
+  transition: .3s;
+  transition-delay: .5s;
+  transform: scale(.5);
+  width: 90%;
+  z-index: 10000;
+}
+.image {
+  width: 100%;
 }

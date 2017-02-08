@@ -117,7 +117,7 @@ if (isProduction) {
     exclude: /node_modules/,
     use: [
       'style-loader',
-      'css-loader?modules&localIdentName=[name]___[hash:base64:5]',
+      'css-loader?modules&localIdentName=[name]_[local]___[hash:base64:5]',
       'postcss-loader',
       'sass-loader?sourceMap'
     ]
