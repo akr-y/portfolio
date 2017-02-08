@@ -37,7 +37,7 @@ export default class ImageModal extends Component {
     return (
       <div className={`${styles.wrapper} ${this.state.isModal ? styles.showModal : ''}`}>
         <div className={styles.ImageWrapper}>
-          <div className={styles.style}>
+          <div className={styles.overflow}>
             {work ? <img className={styles.image} src={work.fields.image.fields.file.url} role={'presentation'}/> : null}
           </div>
         </div>
