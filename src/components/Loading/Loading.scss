@@ -1,0 +1,101 @@
+.fadingcircle {
+  margin: 100px auto;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.fadingcircle .circle {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.fadingcircle .circle:before {
+  content: '';
+  display: block;
+  margin: 0 auto;
+  width: 15%;
+  height: 15%;
+  background-color: #fff;
+  border-radius: 100%;
+  animation: circleFadeDelay 1.2s infinite ease-in-out both;
+}
+.fadingcircle .circle2 {
+  transform: rotate(30deg);
+}
+.fadingcircle .circle3 {
+  transform: rotate(60deg);
+}
+.fadingcircle .circle4 {
+  transform: rotate(90deg);
+}
+.fadingcircle .circle5 {
+  transform: rotate(120deg);
+}
+.fadingcircle .circle6 {
+  transform: rotate(150deg);
+}
+.fadingcircle .circle7 {
+  transform: rotate(180deg);
+}
+.fadingcircle .circle8 {
+  transform: rotate(210deg);
+}
+.fadingcircle .circle9 {
+  transform: rotate(240deg);
+}
+.fadingcircle .circle10 {
+  transform: rotate(270deg);
+}
+.fadingcircle .circle11 {
+  transform: rotate(300deg);
+}
+.fadingcircle .circle12 {
+  transform: rotate(330deg);
+}
+.fadingcircle .circle2:before {
+  animation-delay: -1.1s;
+}
+.fadingcircle .circle3:before {
+  animation-delay: -1s;
+}
+.fadingcircle .circle4:before {
+  animation-delay: -0.9s;
+}
+.fadingcircle .circle5:before {
+  animation-delay: -0.8s;
+}
+.fadingcircle .circle6:before {
+  animation-delay: -0.7s;
+}
+.fadingcircle .circle7:before {
+  animation-delay: -0.6s;
+}
+.fadingcircle .circle8:before {
+  animation-delay: -0.5s;
+}
+.fadingcircle .circle9:before {
+  animation-delay: -0.4s;
+}
+.fadingcircle .circle10:before {
+  animation-delay: -0.3s;
+}
+.fadingcircle .circle11:before {
+  animation-delay: -0.2s;
+}
+.fadingcircle .circle12:before {
+  animation-delay: -0.1s;
+}
+
+@-webkit-keyframes circleFadeDelay {
+  0%, 39%, 100% { opacity: 0; }
+  40% { opacity: 1; }
+}
+
+@keyframes -ircleFadeDelay {
+  0%, 39%, 100% { opacity: 0; }
+  40% { opacity: 1; }
+}
