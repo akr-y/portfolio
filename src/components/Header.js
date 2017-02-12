@@ -1,9 +1,7 @@
 import React, {Component} from 'react'
-import {connect} from 'react-redux'
 import styles from './Header.scss'
 import iconGithub from 'assets/img/svg/github.svg'
 
-@connect(state => ({...state}))
 
 export default class Header extends Component {
 
