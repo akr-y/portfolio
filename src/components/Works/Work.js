@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router'
+import Loading from 'components/Loading'
 import styles from './Work.scss'
 
 @connect(state => ({...state}))
@@ -16,6 +17,17 @@ export default class Work extends Component {
     title: PropTypes.string,
     thumbnail: PropTypes.string
   }
+  constructor() {
+    super()
+    this.state = {
+      imageLoaded: false
+    }
+  }
+  onLoadImage() {
+    this.setState({
+      imageLoaded: true
+    })
+  }
   render() {
     return (
       <div className={styles.wrapper}>
@@ -23,10 +35,12 @@ export default class Work extends Component {
           <div className={styles.thumbnailWrapper}>
             <Link to={`/work/${this.props.workId}`}>
               <img
-                className={styles.thumbnail}
+                className={`${this.state.imageLoaded ? styles.showImage : ''} ${styles.thumbnail}`}
                 src={this.props.thumbnail}
+                onLoad={this.onLoadImage.bind(this)}
                 role='presentation'
               />
+              {this.state.imageLoaded ? null : <Loading />}
             </Link>
           </div>
           <div className={styles.descriptionWrapper}>

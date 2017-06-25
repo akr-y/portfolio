@@ -45,5 +45,10 @@
 .image {
   box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
   display: block;
+  opacity: 0;
+  transition-duration: .3s;
   width: 100%;
+  &.show {
+    opacity: 1;
+  }  
 }
