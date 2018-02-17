@@ -1,7 +1,7 @@
-import React, {Component, PropTypes} from 'react'
+import PropTypes from 'prop-types'
+import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import _ from 'lodash'
-import {push} from 'react-router'
 import styles from './Works.scss'
 import Work from './Work'
 

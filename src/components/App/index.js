@@ -1,4 +1,5 @@
-import React, {Component, PropTypes} from 'react'
+import PropTypes from 'prop-types'
+import React, {Component} from 'react'
 import {fetchWorks} from 'reducers/app'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'

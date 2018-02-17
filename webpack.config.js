@@ -47,14 +47,6 @@ const plugins = [
   }),
   new webpack.LoaderOptionsPlugin({
     options: {
-      postcss: [
-        autoprefixer({
-          browsers: [
-            'last 4 version',
-            'ie >= 10'
-          ]
-        })
-      ],
       context: sourcePath
     }
   })
@@ -134,7 +126,7 @@ module.exports = {
       'es6-promise',
       'react-dom',
       'react-redux',
-      'react-router',
+      'react-router-dom',
       'react',
       'redux-thunk',
       'redux'
